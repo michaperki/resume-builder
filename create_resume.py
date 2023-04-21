@@ -194,7 +194,7 @@ def add_education(pdf):
     pdf.drawString(margin, inch * 4.6, education_details)
 
     # Write the education dates
-    education_dates = "2014 - 2018"
+    education_dates = "July 2014 - June 2018"
     education_dates_width = pdf.stringWidth(education_dates, "Helvetica", 10)
     pdf.drawString(letter[0] - margin - education_dates_width, inch * 4.6, education_dates)
 
@@ -249,7 +249,7 @@ def add_projects(pdf):
     project_2 = {
         "employer": "Dartmouth College",
         "date": "2018",
-        "description": "Develop resume generator for Dartmouth students using Python."
+        "description": "Develop resume generator for Mentorship program using Python."
     }
 
     projects_details = "• " + project_1["employer"] + ", " + project_1["date"] + ": " + project_1["description"]
