@@ -24,6 +24,7 @@ margin = inch * 0.75
 experience_1 = {
     "job_title": "Data Engineer",
     "company": "Nomi Health",
+    "location": "Austin, TX",
     "start_date": "May 2022",
     "end_date": "Present",
     "description": {
@@ -36,6 +37,7 @@ experience_1 = {
 experience_2 = {
     "job_title": "Founder",
     "company": "eSports Startup",
+    "location": "New York, NY",
     "start_date": "Jan 2021",
     "end_date": "April 2022",
     "description": {
@@ -48,12 +50,13 @@ experience_2 = {
 experience_3 = {
     "job_title": "Data Scientist",
     "company": "Ed Tech Startup",
+    "location": "New York, NY",
     "start_date": "June 2018",
     "end_date": "Dec 2020",
     "description": {
-        "job_detail_1": "• Built a recommendation engine for personalized learning",
+        "job_detail_1": "• Manage team of 12 remote researchers and deliver productivity metrics",
         "job_detail_2": "• Improved data quality by 50% by implementing data validation",
-        "job_detail_3": "• Developed a data pipeline to automate data collection"
+        "job_detail_3": "• Work cross-functionally with sales, product, and marketing teams to optimize conversion rates"
         }
     }
 
@@ -155,6 +158,10 @@ def add_work_detail(experience, pdf, start_height=8.75):
 
     # Set the font and font size for the dates
     pdf.setFont("Helvetica", 10)
+
+    # write the location on the same line as the company name, right after the company name
+    location = experience["location"]
+    pdf.drawString(margin + job_title_width + pdf.stringWidth(", " + company, "Helvetica", 12), inch * start_height, ", " + location)
 
     # Write the dates on the same line as the company name on the right side of the page
     start_date = experience["start_date"]
